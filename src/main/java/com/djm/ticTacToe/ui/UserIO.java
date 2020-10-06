@@ -1,14 +1,17 @@
 package main.java.com.djm.ticTacToe.ui;
 
+import java.util.List;
+
 public interface UserIO {
 
-    public void print(String message);
+    void print(String message);
 
-    public String readString(String prompt);
+    String readString(String prompt);
 
-    public int readInt(String prompt);
+    int readInt(String prompt);
 
-    public int readInt(String prompt, int min, int max);
+    int readInt(String prompt, int min, int max);
 
-    public char readChar(String prompt);
+    char readChar(String prompt, List<Character> charList);
+
 }

@@ -1,5 +1,8 @@
 package main.java.com.djm.ticTacToe.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameView {
     private UserIO userIO;
 
@@ -35,10 +38,14 @@ public class GameView {
     } 
 
     public int[] getPlayerChoice(String name, char symbol){
+        List<Character> charList = new ArrayList<>();
+        charList.add('a');
+        charList.add('b');
+        charList.add('c');
         int[] rowColumn = new int[2];
         userIO.print(name + " turn (" + symbol + ")");
         rowColumn[0] = userIO.readInt("Pick A Row: ", 0, 2);
-        switch(userIO.readChar("Pick A Column: ")){
+        switch(userIO.readChar("Pick A Column: ", charList)){
 
             case 'a':
                 rowColumn[1] = 0;
@@ -59,8 +66,10 @@ public class GameView {
     }
 
     public boolean playAgain(){
-      
-        switch(userIO.readChar("Play Again? Y/N : ")){
+        List<Character> charList = new ArrayList<>();
+        charList.add('y');
+        charList.add('n');
+        switch(userIO.readChar("Play Again? Y/N : ", charList)){
 
             case 'y':
                 return false;
