@@ -1,7 +1,5 @@
 package main.java.com.djm.ticTacToe.ui;
 
-import java.util.Arrays;
-
 public class GameView {
     private UserIO userIO;
 
@@ -23,7 +21,7 @@ public class GameView {
     public void displayGameBoard(char[][] gameBoard, int round){
         userIO.print("________________________________________");
         userIO.print("              GameBoard                 ");
-        userIO.print("_______________Round " + round + "______________");
+        userIO.print("              Round " + round);
         userIO.print("________________________________________");
         System.out.println("              A   B   C");
         for(int i = 0; i < gameBoard.length; i++){
