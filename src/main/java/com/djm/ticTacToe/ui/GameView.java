@@ -37,7 +37,7 @@ public class GameView {
     public int[] getPlayerChoice(String name, char symbol){
         int[] rowColumn = new int[2];
         userIO.print(name + " turn (" + symbol + ")");
-        rowColumn[0] = userIO.readInt("Pick A Row: ");
+        rowColumn[0] = userIO.readInt("Pick A Row: ", 0, 2);
         switch(userIO.readChar("Pick A Column: ")){
 
             case 'a':

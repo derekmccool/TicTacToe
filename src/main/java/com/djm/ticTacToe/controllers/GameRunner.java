@@ -8,7 +8,7 @@ import main.java.com.djm.ticTacToe.ui.GameView;
 
 public class GameRunner {
 
-    
+
     private final char SYMBOL1 = 'X';
     private final char SYMBOL2 = 'O';
 

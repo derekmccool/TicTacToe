@@ -8,5 +8,7 @@ public interface UserIO {
 
     public int readInt(String prompt);
 
+    public int readInt(String prompt, int min, int max);
+
     public char readChar(String prompt);
 }

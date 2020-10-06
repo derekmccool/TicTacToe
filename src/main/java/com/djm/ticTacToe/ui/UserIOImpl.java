@@ -3,6 +3,8 @@ package main.java.com.djm.ticTacToe.ui;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import main.java.com.djm.ticTacToe.exceptions.InputOutOfRangeException;
+
 public class UserIOImpl implements UserIO {
 
     Scanner sc = new Scanner(System.in);
@@ -45,6 +47,28 @@ public class UserIOImpl implements UserIO {
     }
 
     @Override
+    public int readInt(String prompt, int min, int max) {
+		int userInput;
+		while (true) {
+			try {
+				System.out.print(prompt);
+				userInput = sc.nextInt();
+				if(userInput >= min &&  userInput <= max) {
+					return userInput;
+				}else {
+					throw new InputOutOfRangeException(min, max);
+				}
+				
+			} catch (InputOutOfRangeException e) {
+				sc.nextLine();
+				System.out.println("Please insert an integer value");
+			}
+			
+		}
+    }
+    
+
+    @Override
     public char readChar(String prompt) {
 		char userInput;
 		while (true) {
@@ -59,5 +83,6 @@ public class UserIOImpl implements UserIO {
 			
 		}
     }
+
     
 }
